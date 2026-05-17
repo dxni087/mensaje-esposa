@@ -5,42 +5,42 @@ const messages = [
     date: '2026-05-18',
     color: '#E91E63',
     petals: ['#E91E63','#F48FB1','#FF80AB'],
-    message: 'Mi amor, hoy comienzo este viaje pero quiero que sepas que tú vienes conmigo en cada pensamiento. Esta semana puede que esté lejos en distancia, pero mi corazón sigue contigo, latiendo a tu lado. Cuida mucho de ti, que yo regreso pronto a abrazarte.'
+    message: 'Odette, arrancando la semana lejos pero pensando en ti, como siempre. Quería decirte algo que a veces no digo: gracias por todo lo que haces por mí. El hombre que soy hoy es por ti — y también estoy trabajando día con día para ser el que tú mereces.'
   },
   {
     day: 'Martes',
     date: '2026-05-19',
     color: '#FDD835',
     petals: ['#FDD835','#FFEE58','#FFF176'],
-    message: 'Hoy desperté pensando en tu sonrisa, esa que ilumina mis mañanas. ¿Sabes? El sol allá donde estés brilla porque tú lo estás mirando. Eres lo más bonito que me ha pasado, y cada día lejos me confirma lo mucho que te amo.'
+    message: 'Día dos, Odette. Sigo pensando en ti más seguido de lo que crees. A veces se me olvida decírtelo, pero noto todo lo que haces por mí. Cada día me esfuerzo por ser mejor, por estar a la altura de la mujer que tengo al lado.'
   },
   {
     day: 'Miércoles',
     date: '2026-05-20',
     color: '#7B1FA2',
     petals: ['#7B1FA2','#CE93D8','#E1BEE7'],
-    message: 'Vamos a mitad de semana, mi vida. Quiero recordarte lo orgullosa que debes estar de ti misma, de la mujer increíble que eres. Gracias por ser mi compañera, mi hogar, mi paz. Hoy te mando un beso enorme y todo mi amor envuelto en pétalos.'
+    message: 'Mitad de semana, Odette. Te extraño. Mucho de lo bueno que tengo en la vida es porque tú estás conmigo, y por eso mismo no me detengo — me sigo formando, todos los días, para ser el hombre que tú necesitas.'
   },
   {
     day: 'Jueves',
     date: '2026-05-21',
     color: '#F4511E',
     petals: ['#F4511E','#FF8A65','#FFCCBC'],
-    message: 'Hoy pensé en nuestra historia y me di cuenta de algo: contigo todo es mejor. El café, las noches, las risas, hasta el silencio. Te extraño con cada parte de mí, pero también celebro saber que tengo a alguien tan especial esperándome en casa.'
+    message: 'Casi nos vemos, Odette. Pensando en lo afortunado que soy de tenerte. Tú me haces mejor, y eso me motiva a seguir creciendo. Quiero llegar a ser exactamente el hombre que mereces.'
   },
   {
     day: 'Viernes',
     date: '2026-05-22',
     color: '#1565C0',
     petals: ['#1565C0','#64B5F6','#BBDEFB'],
-    message: 'Ya casi, mi amor. Un día más y estaré contigo. Quiero que sepas que estos días lejos no han hecho más que recordarme cuánto te necesito en mi vida. Eres mi razón, mi inspiración y la dueña absoluta de mi corazón. Te amo infinito.'
+    message: 'Último día lejos, Odette. Esta semana me confirmó algo: contigo todo funciona mejor. Gracias por estar pendiente de mí siempre. Sigo formándome cada día — por mí, pero sobre todo por ti y por nosotros.'
   },
   {
     day: 'Sábado',
     date: '2026-05-23',
     color: '#00695C',
     petals: ['#00695C','#4DB6AC','#E0F2F1'],
-    message: 'Hoy nos volvemos a ver, mi amor. Esta semana sin ti me confirmó que tú eres mi lugar favorito en el mundo. Gracias por esperarme, por amarme, por ser tú. Prepárate porque vengo con muchos abrazos, muchos besos y todo el amor que se acumuló estos días.'
+    message: 'De vuelta a casa, Odette. Llevé tu recuerdo conmigo toda la semana. Gracias por ser quien eres y por hacerme querer ser mejor cada día. Te amo.'
   }
 ];
 
