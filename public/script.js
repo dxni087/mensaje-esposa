@@ -5,42 +5,42 @@ const messages = [
     date: '2026-05-18',
     color: '#E91E63',
     petals: ['#E91E63','#F48FB1','#FF80AB'],
-    message: 'Odette, arrancando la semana lejos pero pensando en ti, como siempre. Quería decirte algo que a veces no digo: gracias por todo lo que haces por mí. El hombre que soy hoy es por ti — y también estoy trabajando día con día para ser el que tú mereces.'
+    message: 'Amor, arrancando la semana lejos pero pensando en ti, como siempre. Quería decirte algo que a veces no digo: gracias por todo lo que haces por mí. El hombre que soy hoy es por ti — y también estoy trabajando día con día para ser el que tú mereces.'
   },
   {
     day: 'Martes',
     date: '2026-05-19',
     color: '#FDD835',
     petals: ['#FDD835','#FFEE58','#FFF176'],
-    message: 'Día dos, Odette. Sigo pensando en ti más seguido de lo que crees. A veces se me olvida decírtelo, pero noto todo lo que haces por mí. Cada día me esfuerzo por ser mejor, por estar a la altura de la mujer que tengo al lado.'
+    message: 'Día dos, amor. Sigo pensando en ti más seguido de lo que crees. A veces se me olvida decírtelo, pero noto todo lo que haces por mí. Cada día me esfuerzo por ser mejor, por estar a la altura de la mujer que tengo al lado.'
   },
   {
     day: 'Miércoles',
     date: '2026-05-20',
     color: '#7B1FA2',
     petals: ['#7B1FA2','#CE93D8','#E1BEE7'],
-    message: 'Mitad de semana, Odette. Te extraño. Mucho de lo bueno que tengo en la vida es porque tú estás conmigo, y por eso mismo no me detengo — me sigo formando, todos los días, para ser el hombre que tú necesitas.'
+    message: 'Mitad de semana, amor. Te extraño. Mucho de lo bueno que tengo en la vida es porque tú estás conmigo, y por eso mismo no me detengo — me sigo formando, todos los días, para ser el hombre que tú necesitas.'
   },
   {
     day: 'Jueves',
     date: '2026-05-21',
     color: '#F4511E',
     petals: ['#F4511E','#FF8A65','#FFCCBC'],
-    message: 'Casi nos vemos, Odette. Pensando en lo afortunado que soy de tenerte. Tú me haces mejor, y eso me motiva a seguir creciendo. Quiero llegar a ser exactamente el hombre que mereces.'
+    message: 'Casi nos vemos, amor. Pensando en lo afortunado que soy de tenerte. Tú me haces mejor, y eso me motiva a seguir creciendo. Quiero llegar a ser exactamente el hombre que mereces.'
   },
   {
     day: 'Viernes',
     date: '2026-05-22',
     color: '#1565C0',
     petals: ['#1565C0','#64B5F6','#BBDEFB'],
-    message: 'Último día lejos, Odette. Esta semana me confirmó algo: contigo todo funciona mejor. Gracias por estar pendiente de mí siempre. Sigo formándome cada día — por mí, pero sobre todo por ti y por nosotros.'
+    message: 'Último día lejos, amor. Esta semana me confirmó algo: contigo todo funciona mejor. Gracias por estar pendiente de mí siempre. Sigo formándome cada día — por mí, pero sobre todo por ti y por nosotros.'
   },
   {
     day: 'Sábado',
     date: '2026-05-23',
     color: '#00695C',
     petals: ['#00695C','#4DB6AC','#E0F2F1'],
-    message: 'De vuelta a casa, Odette. Llevé tu recuerdo conmigo toda la semana. Gracias por ser quien eres y por hacerme querer ser mejor cada día. Te amo.'
+    message: 'De vuelta a casa, amor. Llevé tu recuerdo conmigo toda la semana. Gracias por ser quien eres y por hacerme querer ser mejor cada día. Te amo.'
   }
 ];
 
