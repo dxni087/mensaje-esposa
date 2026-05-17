@@ -3,35 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para ti, mi amor 🌹</title>
+  <title>Para ti, mi amor 🌸</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="petals" id="petals"></div>
 
-  <header class="hero">
-    <h1 class="title">Para ti, mi amor</h1>
-    <p class="subtitle">Aunque no esté contigo esta semana, cada día tendrás un pedacito de mí 🌹</p>
-    <div class="countdown" id="countdown"></div>
-  </header>
+  <!-- Flores Lego flotantes de fondo -->
+  <div class="bg-flowers" id="bgFlowers"></div>
 
-  <main class="grid" id="grid"></main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bouquet">
+      <!-- Ramo SVG estilo Lego -->
+      <svg class="bouquet-svg" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Tallos -->
+        <rect x="175" y="210" width="10" height="90" rx="5" fill="#4CAF50"/>
+        <rect x="155" y="220" width="9" height="80" rx="4" fill="#388E3C" transform="rotate(-10 155 220)"/>
+        <rect x="196" y="218" width="9" height="82" rx="4" fill="#388E3C" transform="rotate(10 196 218)"/>
+        <rect x="134" y="228" width="8" height="75" rx="4" fill="#2E7D32" transform="rotate(-18 134 228)"/>
+        <rect x="218" y="226" width="8" height="76" rx="4" fill="#2E7D32" transform="rotate(18 218 226)"/>
+        <rect x="112" y="238" width="7" height="68" rx="3" fill="#1B5E20" transform="rotate(-28 112 238)"/>
+        <rect x="241" y="236" width="7" height="68" rx="3" fill="#1B5E20" transform="rotate(28 241 236)"/>
+        <!-- Hojas -->
+        <ellipse cx="163" cy="255" rx="14" ry="7" fill="#66BB6A" transform="rotate(-30 163 255)"/>
+        <ellipse cx="197" cy="252" rx="14" ry="7" fill="#66BB6A" transform="rotate(30 197 252)"/>
 
-  <footer class="footer">
-    <p>Hecho con todo mi corazón 💌</p>
+        <!-- Flor 1 - Rosa (centro) -->
+        <g transform="translate(180,170)">
+          <circle cx="0" cy="-38" r="18" fill="#E91E63"/>
+          <circle cx="33" cy="-19" r="18" fill="#E91E63"/>
+          <circle cx="33" cy="19" r="18" fill="#E91E63"/>
+          <circle cx="0" cy="38" r="18" fill="#E91E63"/>
+          <circle cx="-33" cy="19" r="18" fill="#E91E63"/>
+          <circle cx="-33" cy="-19" r="18" fill="#E91E63"/>
+          <circle cx="0" cy="0" r="22" fill="#FF80AB"/>
+          <circle cx="0" cy="0" r="11" fill="#F48FB1" stroke="#E91E63" stroke-width="2"/>
+        </g>
+
+        <!-- Flor 2 - Amarilla (izquierda) -->
+        <g transform="translate(105,145)">
+          <circle cx="0" cy="-30" r="14" fill="#FDD835"/>
+          <circle cx="26" cy="-15" r="14" fill="#FDD835"/>
+          <circle cx="26" cy="15" r="14" fill="#FDD835"/>
+          <circle cx="0" cy="30" r="14" fill="#FDD835"/>
+          <circle cx="-26" cy="15" r="14" fill="#FDD835"/>
+          <circle cx="-26" cy="-15" r="14" fill="#FDD835"/>
+          <circle cx="0" cy="0" r="18" fill="#FFEE58"/>
+          <circle cx="0" cy="0" r="9" fill="#F9A825" stroke="#F57F17" stroke-width="2"/>
+        </g>
+
+        <!-- Flor 3 - Morada (derecha) -->
+        <g transform="translate(255,148)">
+          <circle cx="0" cy="-30" r="14" fill="#7B1FA2"/>
+          <circle cx="26" cy="-15" r="14" fill="#7B1FA2"/>
+          <circle cx="26" cy="15" r="14" fill="#7B1FA2"/>
+          <circle cx="0" cy="30" r="14" fill="#7B1FA2"/>
+          <circle cx="-26" cy="15" r="14" fill="#7B1FA2"/>
+          <circle cx="-26" cy="-15" r="14" fill="#7B1FA2"/>
+          <circle cx="0" cy="0" r="18" fill="#CE93D8"/>
+          <circle cx="0" cy="0" r="9" fill="#E1BEE7" stroke="#7B1FA2" stroke-width="2"/>
+        </g>
+
+        <!-- Flor 4 - Naranja (izquierda baja) -->
+        <g transform="translate(80,200)">
+          <circle cx="0" cy="-24" r="11" fill="#F4511E"/>
+          <circle cx="21" cy="-12" r="11" fill="#F4511E"/>
+          <circle cx="21" cy="12" r="11" fill="#F4511E"/>
+          <circle cx="0" cy="24" r="11" fill="#F4511E"/>
+          <circle cx="-21" cy="12" r="11" fill="#F4511E"/>
+          <circle cx="-21" cy="-12" r="11" fill="#F4511E"/>
+          <circle cx="0" cy="0" r="14" fill="#FF8A65"/>
+          <circle cx="0" cy="0" r="7" fill="#FFCCBC" stroke="#F4511E" stroke-width="2"/>
+        </g>
+
+        <!-- Flor 5 - Azul (derecha baja) -->
+        <g transform="translate(282,202)">
+          <circle cx="0" cy="-24" r="11" fill="#1565C0"/>
+          <circle cx="21" cy="-12" r="11" fill="#1565C0"/>
+          <circle cx="21" cy="12" r="11" fill="#1565C0"/>
+          <circle cx="0" cy="24" r="11" fill="#1565C0"/>
+          <circle cx="-21" cy="12" r="11" fill="#1565C0"/>
+          <circle cx="-21" cy="-12" r="11" fill="#1565C0"/>
+          <circle cx="0" cy="0" r="14" fill="#64B5F6"/>
+          <circle cx="0" cy="0" r="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="2"/>
+        </g>
+
+        <!-- Flor 6 - Verde (muy izquierda) -->
+        <g transform="translate(48,238)">
+          <circle cx="0" cy="-20" r="10" fill="#00695C"/>
+          <circle cx="17" cy="-10" r="10" fill="#00695C"/>
+          <circle cx="17" cy="10" r="10" fill="#00695C"/>
+          <circle cx="0" cy="20" r="10" fill="#00695C"/>
+          <circle cx="-17" cy="10" r="10" fill="#00695C"/>
+          <circle cx="-17" cy="-10" r="10" fill="#00695C"/>
+          <circle cx="0" cy="0" r="12" fill="#4DB6AC"/>
+          <circle cx="0" cy="0" r="6" fill="#E0F2F1" stroke="#00695C" stroke-width="1.5"/>
+        </g>
+
+        <!-- Flor 7 - Roja (muy derecha) -->
+        <g transform="translate(312,240)">
+          <circle cx="0" cy="-20" r="10" fill="#B71C1C"/>
+          <circle cx="17" cy="-10" r="10" fill="#B71C1C"/>
+          <circle cx="17" cy="10" r="10" fill="#B71C1C"/>
+          <circle cx="0" cy="20" r="10" fill="#B71C1C"/>
+          <circle cx="-17" cy="10" r="10" fill="#B71C1C"/>
+          <circle cx="-17" cy="-10" r="10" fill="#B71C1C"/>
+          <circle cx="0" cy="0" r="12" fill="#EF9A9A"/>
+          <circle cx="0" cy="0" r="6" fill="#FFEBEE" stroke="#B71C1C" stroke-width="1.5"/>
+        </g>
+
+        <!-- Base / lazo -->
+        <ellipse cx="180" cy="295" rx="55" ry="18" fill="#FF80AB"/>
+        <ellipse cx="180" cy="295" rx="42" ry="12" fill="#F48FB1"/>
+        <text x="180" y="300" text-anchor="middle" font-size="12" fill="white" font-family="Nunito" font-weight="700">para ti 💕</text>
+      </svg>
+    </div>
+
+    <div class="hero-text reveal-up">
+      <h1 class="title">Para ti,<br>mi amor</h1>
+      <p class="subtitle">Aunque esté lejos esta semana, cada día encontrarás aquí un mensaje y unas flores que te recuerdan cuánto te amo 🌸</p>
+      <div class="countdown-box" id="countdown">
+        <span class="countdown-dot"></span>
+        <span id="countdownText">Cargando...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards-section">
+    <h2 class="section-title reveal-up">Tus mensajes del día</h2>
+    <div class="cards-list" id="grid"></div>
+  </section>
+
+  <footer class="footer reveal-up">
+    <div class="footer-flowers">
+      <span>🌸</span><span>🌺</span><span>🌷</span><span>🌻</span><span>🌼</span>
+    </div>
+    <p>Hecho con todo mi corazón para ti 💌</p>
   </footer>
 
   <!-- Modal -->
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-content">
       <button class="close-btn" id="closeBtn" aria-label="Cerrar">×</button>
-      <div class="flower-decoration">🌹</div>
+      <div class="modal-flower" id="modalFlower"></div>
       <h2 class="modal-day" id="modalDay"></h2>
       <p class="modal-message" id="modalMessage"></p>
-      <div class="hearts" id="hearts"></div>
+      <div class="modal-hearts" id="hearts"></div>
     </div>
   </div>
 
