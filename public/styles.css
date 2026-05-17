@@ -17,6 +17,101 @@ body {
   overflow-x: hidden;
 }
 
+/* ── INTRO / COUNTDOWN ── */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: linear-gradient(160deg, #fff0f6 0%, #fff8e1 50%, #f3e5f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-bg-flowers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.intro-bg-flowers .intro-flower {
+  position: absolute;
+  animation: introFloat 6s ease-in-out infinite;
+}
+
+@keyframes introFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-20px) rotate(20deg); }
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.intro-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #7B1FA2;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.intro-counter {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(8rem, 25vw, 16rem);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #E91E63, #FDD835, #7B1FA2, #F4511E, #1565C0);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: counterPop 1s cubic-bezier(.34,1.56,.64,1), gradientShift 3s ease infinite;
+  filter: drop-shadow(0 8px 24px rgba(233,30,99,0.25));
+}
+
+@keyframes counterPop {
+  0%   { transform: scale(0.3) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.15) rotate(5deg);  opacity: 1; }
+  100% { transform: scale(1) rotate(0);        opacity: 1; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+.intro-counter.heart {
+  font-size: clamp(7rem, 22vw, 14rem);
+  -webkit-text-fill-color: initial;
+}
+
+.intro-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #E91E63;
+  margin-top: 16px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 0.2s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
 /* ── FLORES LEGO DE FONDO ── */
 .bg-flowers {
   position: fixed;

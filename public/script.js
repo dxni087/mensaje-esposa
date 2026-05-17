@@ -227,8 +227,66 @@ function initScrollReveal() {
   document.querySelectorAll('.card').forEach(card => cardObserver.observe(card));
 }
 
+// ── Intro / Cuenta regresiva ─────────────────────────────────────────────
+function runIntro(onComplete) {
+  const intro = document.getElementById('intro');
+  const counter = document.getElementById('introCounter');
+  const flowersContainer = document.getElementById('introFlowers');
+
+  // Decoraciones de flores Lego en el intro
+  const colorSets = [
+    ['#E91E63','#F48FB1','#FF80AB'],
+    ['#FDD835','#FFEE58','#FFF176'],
+    ['#7B1FA2','#CE93D8','#E1BEE7'],
+    ['#F4511E','#FF8A65','#FFCCBC'],
+    ['#1565C0','#64B5F6','#BBDEFB'],
+    ['#00695C','#4DB6AC','#E0F2F1'],
+  ];
+  const positions = [
+    {top:'8%',  left:'8%',  size:90, delay:'0s'},
+    {top:'12%', right:'10%', size:110, delay:'0.4s'},
+    {bottom:'15%', left:'12%', size:100, delay:'0.8s'},
+    {bottom:'10%', right:'8%', size:120, delay:'1.2s'},
+    {top:'45%', left:'4%', size:70, delay:'0.6s'},
+    {top:'40%', right:'5%', size:75, delay:'1s'},
+  ];
+  positions.forEach((pos, i) => {
+    const el = document.createElement('div');
+    el.className = 'intro-flower';
+    Object.assign(el.style, pos);
+    if (pos.size) el.style.width = pos.size + 'px';
+    el.style.animationDelay = pos.delay;
+    el.innerHTML = legoFlowerSVG(colorSets[i], pos.size);
+    flowersContainer.appendChild(el);
+  });
+
+  const sequence = ['3', '2', '1', '💖'];
+  let i = 0;
+
+  function tick() {
+    counter.textContent = sequence[i];
+    counter.classList.toggle('heart', sequence[i] === '💖');
+    // Re-trigger animation
+    counter.style.animation = 'none';
+    void counter.offsetWidth;
+    counter.style.animation = '';
+
+    i++;
+    if (i < sequence.length) {
+      setTimeout(tick, 900);
+    } else {
+      setTimeout(() => {
+        intro.classList.add('hide');
+        onComplete();
+      }, 900);
+    }
+  }
+  tick();
+}
+
 // ── Init ───────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  runIntro(() => {});
   createBgFlowers();
   renderCards();
   updateCountdown();
