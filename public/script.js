@@ -227,10 +227,11 @@ function initScrollReveal() {
   document.querySelectorAll('.card').forEach(card => cardObserver.observe(card));
 }
 
-// ── Intro / Cuenta regresiva ─────────────────────────────────────────────
-function runIntro(onComplete) {
+// ── Intro / Cuenta regresiva hasta el lunes ──────────────────────────────
+const REVEAL_DATE = new Date(2026, 4, 18, 0, 0, 0); // Lunes 18 mayo 2026 00:00
+
+function runIntro() {
   const intro = document.getElementById('intro');
-  const counter = document.getElementById('introCounter');
   const flowersContainer = document.getElementById('introFlowers');
 
   // Decoraciones de flores Lego en el intro
@@ -260,33 +261,42 @@ function runIntro(onComplete) {
     flowersContainer.appendChild(el);
   });
 
-  const sequence = ['3', '2', '1', '💖'];
-  let i = 0;
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minsEl = document.getElementById('mins');
+  const secsEl = document.getElementById('secs');
 
-  function tick() {
-    counter.textContent = sequence[i];
-    counter.classList.toggle('heart', sequence[i] === '💖');
-    // Re-trigger animation
-    counter.style.animation = 'none';
-    void counter.offsetWidth;
-    counter.style.animation = '';
+  function pad(n) { return String(n).padStart(2, '0'); }
 
-    i++;
-    if (i < sequence.length) {
-      setTimeout(tick, 900);
-    } else {
-      setTimeout(() => {
-        intro.classList.add('hide');
-        onComplete();
-      }, 900);
+  function update() {
+    const diff = REVEAL_DATE - new Date();
+
+    if (diff <= 0) {
+      intro.classList.add('hide');
+      clearInterval(timer);
+      // Limpiar el intro del DOM después del fade
+      setTimeout(() => { intro.style.display = 'none'; }, 1000);
+      return;
     }
+
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    daysEl.textContent = pad(d);
+    hoursEl.textContent = pad(h);
+    minsEl.textContent = pad(m);
+    secsEl.textContent = pad(s);
   }
-  tick();
+
+  update();
+  const timer = setInterval(update, 1000);
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  runIntro(() => {});
+  runIntro();
   createBgFlowers();
   renderCards();
   updateCountdown();

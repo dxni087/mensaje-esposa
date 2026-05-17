@@ -69,34 +69,87 @@ body {
   animation: fadeIn 0.8s ease forwards;
 }
 
-.intro-counter {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(8rem, 25vw, 16rem);
+.intro-sublabel {
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  line-height: 1;
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  color: #E91E63;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 0.15s;
+}
+
+.intro-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 18px);
+  margin: 10px 0 20px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 0.3s;
+}
+
+.time-block {
+  background: white;
+  border-radius: 18px;
+  padding: clamp(14px, 3vw, 24px) clamp(12px, 2.5vw, 22px);
+  min-width: clamp(70px, 16vw, 110px);
+  box-shadow: 0 10px 30px rgba(233,30,99,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid transparent;
+  position: relative;
+}
+
+.time-block::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  border-radius: 18px;
   background: linear-gradient(135deg, #E91E63, #FDD835, #7B1FA2, #F4511E, #1565C0);
   background-size: 300% 300%;
+  animation: gradientShift 3s ease infinite;
+  z-index: -1;
+}
+
+.time-block .num {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #E91E63, #7B1FA2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: counterPop 1s cubic-bezier(.34,1.56,.64,1), gradientShift 3s ease infinite;
-  filter: drop-shadow(0 8px 24px rgba(233,30,99,0.25));
 }
 
-@keyframes counterPop {
-  0%   { transform: scale(0.3) rotate(-20deg); opacity: 0; }
-  60%  { transform: scale(1.15) rotate(5deg);  opacity: 1; }
-  100% { transform: scale(1) rotate(0);        opacity: 1; }
+.time-block .lbl {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+  color: #5a5a7a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.time-sep {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #E91E63;
+  font-weight: 700;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50%       { background-position: 100% 50%; }
-}
-
-.intro-counter.heart {
-  font-size: clamp(7rem, 22vw, 14rem);
-  -webkit-text-fill-color: initial;
 }
 
 .intro-name {
