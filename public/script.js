@@ -228,7 +228,8 @@ function initScrollReveal() {
 }
 
 // ── Intro / Cuenta regresiva hasta el lunes ──────────────────────────────
-const REVEAL_DATE = new Date(2026, 4, 18, 0, 0, 0); // Lunes 18 mayo 2026 00:00
+// Ya pasó: el intro se cierra inmediatamente
+const REVEAL_DATE = new Date(2026, 4, 17, 0, 0, 0); // 17 mayo 2026 00:00 (ya pasó)
 
 function runIntro() {
   const intro = document.getElementById('intro');
