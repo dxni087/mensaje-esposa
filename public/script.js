@@ -223,77 +223,9 @@ function initScrollReveal() {
   document.querySelectorAll('.card').forEach(card => cardObserver.observe(card));
 }
 
-// ── Intro / Cuenta regresiva hasta el lunes ──────────────────────────────
-// Ya pasó: el intro se cierra inmediatamente
-const REVEAL_DATE = new Date(2026, 4, 17, 0, 0, 0); // 17 mayo 2026 00:00 (ya pasó)
-
-function runIntro() {
-  const intro = document.getElementById('intro');
-  const flowersContainer = document.getElementById('introFlowers');
-
-  // Decoraciones de flores Lego en el intro
-  const colorSets = [
-    ['#E91E63','#F48FB1','#FF80AB'],
-    ['#FDD835','#FFEE58','#FFF176'],
-    ['#7B1FA2','#CE93D8','#E1BEE7'],
-    ['#F4511E','#FF8A65','#FFCCBC'],
-    ['#1565C0','#64B5F6','#BBDEFB'],
-    ['#00695C','#4DB6AC','#E0F2F1'],
-  ];
-  const positions = [
-    {top:'8%',  left:'8%',  size:90, delay:'0s'},
-    {top:'12%', right:'10%', size:110, delay:'0.4s'},
-    {bottom:'15%', left:'12%', size:100, delay:'0.8s'},
-    {bottom:'10%', right:'8%', size:120, delay:'1.2s'},
-    {top:'45%', left:'4%', size:70, delay:'0.6s'},
-    {top:'40%', right:'5%', size:75, delay:'1s'},
-  ];
-  positions.forEach((pos, i) => {
-    const el = document.createElement('div');
-    el.className = 'intro-flower';
-    Object.assign(el.style, pos);
-    if (pos.size) el.style.width = pos.size + 'px';
-    el.style.animationDelay = pos.delay;
-    el.innerHTML = legoFlowerSVG(colorSets[i], pos.size);
-    flowersContainer.appendChild(el);
-  });
-
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minsEl = document.getElementById('mins');
-  const secsEl = document.getElementById('secs');
-
-  function pad(n) { return String(n).padStart(2, '0'); }
-
-  function update() {
-    const diff = REVEAL_DATE - new Date();
-
-    if (diff <= 0) {
-      intro.classList.add('hide');
-      clearInterval(timer);
-      // Limpiar el intro del DOM después del fade
-      setTimeout(() => { intro.style.display = 'none'; }, 1000);
-      return;
-    }
-
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-
-    daysEl.textContent = pad(d);
-    hoursEl.textContent = pad(h);
-    minsEl.textContent = pad(m);
-    secsEl.textContent = pad(s);
-  }
-
-  update();
-  const timer = setInterval(update, 1000);
-}
 
 // ── Init ───────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  runIntro();
   createBgFlowers();
   renderCards();
   updateCountdown();
