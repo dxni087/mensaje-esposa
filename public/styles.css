@@ -530,6 +530,12 @@ body {
   transform: translateY(0);
 }
 
+/* Hero siempre visible */
+.hero .reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {
   .card-body { padding: 18px 16px; gap: 14px; }

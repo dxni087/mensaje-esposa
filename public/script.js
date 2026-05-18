@@ -208,21 +208,17 @@ function createBgFlowers() {
 function initScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
-  // Revelar elementos generales
   document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
 
-  // Observar cards (se generan dinámicamente)
   const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('in-view');
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.card').forEach(card => cardObserver.observe(card));
 }
